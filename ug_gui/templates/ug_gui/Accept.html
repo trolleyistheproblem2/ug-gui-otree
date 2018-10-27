@@ -1,0 +1,203 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+        <strong>आप चयनकर्ता है। आप स्वीकार या अस्वीकार कर रहे हैं।</strong>
+{% endblock %}
+
+{% block content %}
+
+    {% if group.amount_offered == 0 %}
+        <p>
+        <audio controls id="audioInstructions">
+              <source src="{% static "Accept_0.mp3" %}" type="audio/mp3">
+            </audio>
+        </p>
+    {% endif %}
+    {% if group.amount_offered == 1 %}
+         <p>
+        <audio controls id="audioInstructions">
+              <source src="{% static "Accept_1.mp3" %}" type="audio/mp3">
+            </audio>
+        </p>
+    {% endif %}
+    {% if group.amount_offered == 2 %}
+         <p>
+        <audio controls id="audioInstructions">
+              <source src="{% static "Accept_2.mp3" %}" type="audio/mp3">
+            </audio>
+        </p>
+    {% endif %}
+    {% if group.amount_offered == 3 %}
+         <p>
+        <audio controls id="audioInstructions">
+              <source src="{% static "Accept_3.mp3" %}" type="audio/mp3">
+            </audio>
+        </p>
+    {% endif %}
+    {% if group.amount_offered == 4 %}
+         <p>
+        <audio controls id="audioInstructions">
+              <source src="{% static "Accept_4.mp3" %}" type="audio/mp3">
+            </audio>
+        </p>
+    {% endif %}
+    {% if group.amount_offered == 5 %}
+         <p>
+        <audio controls id="audioInstructions">
+              <source src="{% static "Accept_5.mp3" %}" type="audio/mp3">
+            </audio>
+        </p>
+    {% endif %}
+    {% if group.amount_offered == 6 %}
+         <p>
+        <audio controls id="audioInstructions">
+              <source src="{% static "Accept_6.mp3" %}" type="audio/mp3">
+            </audio>
+        </p>
+    {% endif %}
+    {% if group.amount_offered == 7 %}
+         <p>
+        <audio controls id="audioInstructions">
+              <source src="{% static "Accept_7.mp3" %}" type="audio/mp3">
+            </audio>
+        </p>
+    {% endif %}
+    {% if group.amount_offered == 8 %}
+         <p>
+        <audio controls id="audioInstructions">
+              <source src="{% static "Accept_8.mp3" %}" type="audio/mp3">
+            </audio>
+        </p>
+    {% endif %}
+    {% if group.amount_offered == 9 %}
+         <p>
+        <audio controls id="audioInstructions">
+              <source src="{% static "Accept_9.mp3" %}" type="audio/mp3">
+            </audio>
+        </p>
+    {% endif %}
+    {% if group.amount_offered == 10 %}
+         <p>
+        <audio controls id="audioInstructions">
+              <source src="{% static "Accept_10.mp3" %}" type="audio/mp3">
+            </audio>
+        </p>
+    {% endif %}
+
+    <div class="grid-container">
+      <div class="grid-item">
+          <img src ="{% static "giveImage.png" %}" width="140">
+      </div>
+
+      <div class="grid-item-keep">
+
+
+    <p align=center>
+    {% if group.amount_offered == 0 %}
+         <img src="{% static "zero.png" %}" width="700"/>
+    {% endif %}
+    {% if group.amount_offered == 1 %}
+         <img src="{% static "one.png" %}" width="700"/>
+    {% endif %}
+    {% if group.amount_offered == 2 %}
+         <img src="{% static "two.png" %}" width="700"/>
+    {% endif %}
+    {% if group.amount_offered == 3 %}
+         <img src="{% static "three.png" %}" width="700"/>
+    {% endif %}
+    {% if group.amount_offered == 4 %}
+         <img src="{% static "four.png" %}" width="700"/>
+    {% endif %}
+    {% if group.amount_offered == 5 %}
+         <img src="{% static "five.png" %}" width="700"/>
+    {% endif %}
+    {% if group.amount_offered == 6 %}
+         <img src="{% static "six.png" %}" width="700"/>
+    {% endif %}
+    {% if group.amount_offered == 7 %}
+         <img src="{% static "seven.png" %}" width="700"/>
+    {% endif %}
+    {% if group.amount_offered == 8 %}
+         <img src="{% static "eight.png" %}" width="700"/>
+    {% endif %}
+    {% if group.amount_offered == 9 %}
+         <img src="{% static "nine.png" %}" width="700"/>
+    {% endif %}
+    {% if group.amount_offered == 10 %}
+         <img src="{% static "ten.png" %}" width="700"/>
+    {% endif %}
+</p>
+
+    <div align=center>
+        <button class="buttons" id="accept" name="offer_accepted" value="True" class="btn btn-primary btn-large">
+            <img src ="{% static "accept.png" %}" width="140">
+        </button>
+        <button class="buttons" id="reject" name="offer_accepted" value="False" class="btn btn-primary btn-large">
+            <img src ="{% static "reject.png" %}" width="140">
+        </button>
+    </div>
+</div>
+
+<style>
+        #audioInstructions {
+            margin: auto;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .grid-container {
+          display: grid;
+          grid-template-columns: auto;
+          background-color: goldenrod;
+          padding: 10px;
+        }
+        .grid-item {
+          background-color: rgba(255, 255, 255, 0.8);
+          border: 1px solid rgba(0, 0, 0, 0.8);
+          padding: 20px;
+          font-size: 30px;
+          text-align: center;
+        }
+        .grid-item-keep {
+          background-color: white;
+          border: 1px solid rgba(0, 0, 0, 0.8);
+          padding: 20px;
+          font-size: 30px;
+          text-align: center;
+        }
+
+        .buttons {
+            background-color: Transparent;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;
+        }
+        .buttons:active {
+          background-color: goldenrod;
+          box-shadow: 0 5px #666;
+          transform: translateY(4px);
+        }
+</style>
+
+<script>
+        $(document).ready(function(){
+            // This bit cues the audio instructions to play automatically
+            setTimeout(function(){
+                  document.getElementById('audioInstructions').play(); }, 3000);
+
+            // This bit of code forces the participant to listen to
+            // the full instructions before being able to click anything.
+            // Just change the time at the end of the function based on
+            // length of instructions.
+            document.getElementById('accept').disabled = true;
+            setTimeout(function(){
+                  document.getElementById('accept').disabled = false;}, 29000);
+             document.getElementById('reject').disabled = true;
+            setTimeout(function(){
+                  document.getElementById('reject').disabled = false;}, 29000);
+        });
+</script>
+
+{% endblock %}

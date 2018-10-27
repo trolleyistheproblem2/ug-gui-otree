@@ -1,0 +1,106 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+<h1>परिक्षण खेल का दूसरा सवाल</h1>
+{% endblock %}
+
+{% block content %}
+
+<div id="question2">
+
+</div>
+
+    <p>
+        <audio controls id="audioInstructions">
+              <source src="{% static "Question2.mp3" %}" type="audio/mp3">
+        </audio>
+    </p>
+
+<hr>
+<table>
+    <tr>
+        <th>
+            <img src= {% static "Question2_Proposer.png" "%} width="500">
+        </th>
+        <th>
+            <img src= {% static "Question2_Responder.png" "%} width="449">
+        </th>
+    </tr>
+</table>
+<hr>
+
+ <span><input type="radio" name="question2" id="incorrect1" value="0"><label for="incorrect1">
+     <img src= {% static "two.png" "%} width="500">
+ </label></span>
+<br>
+ <span><input type="radio" name="question2" id="correct" value={{ Constants.question_correct }}><label for="correct">
+     <img src= {% static "eight.png" "%} width="500">
+ </label></span>
+<br>
+ <span><input type="radio" name="question2" id="incorrect2" value="1"><label for="incorrect2">
+     <img src= {% static "zero.png" "%} width="500">
+ </label></span>
+
+
+<style>
+
+    h1 {
+    color: black;
+    font-size: 200%;
+	padding-left: 0px;
+	position: absolute;
+	top:20px;
+	}
+
+    #audioInstructions {
+        margin: auto;
+        width: 100%;
+        padding: 10px;
+    }
+
+    input[type="radio"] {
+        margin-right: 10px;
+        transform: scale(2);
+
+    }
+
+    #next {
+        background-color: Transparent;
+        background-repeat:no-repeat;
+        border: none;
+        cursor:pointer;
+        overflow: hidden;
+    }
+    #next:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+
+</style>
+
+<script>
+        $(document).ready(function(){
+            // This bit cues the audio instructions to play automatically
+            setTimeout(function(){
+                  document.getElementById('audioInstructions').play(); }, 3000);
+
+            // This bit of code forces the participant to listen to
+            // the full instructions before being able to click anything.
+            // Just change the time at the end of the function based on
+            // length of instructions.
+            document.getElementById('next').disabled = true;
+            setTimeout(function(){
+                  document.getElementById('next').disabled = false;}, 30000);
+        });
+</script>
+
+<p align="right">
+    <button id="next" class="otree-btn-next btn btn-primary">
+        <img src ="{% static "NextButton.png" %}" width="140">
+    </button>
+</p>
+
+{% endblock %}
+

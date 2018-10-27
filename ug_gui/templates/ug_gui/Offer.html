@@ -1,0 +1,393 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+<strong> आप प्रस्तावक हैं। आप बांट रहे हैं।</strong>
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        <audio controls id="audioInstructions">
+              <source src="{% static "Offer_Instructions.mp3" %}" type="audio/mp3">
+        </audio>
+    </p>
+
+    <div class="grid-container">
+      <div class="grid-item">
+          <img src ="{% static "give.png" %}" width="140">
+      </div>
+
+      <div class="grid-item">
+          <br>
+          <table>
+              <tr>
+                <th>
+
+          <div class="nopoints">
+             <span><input type="radio" name="amount_offered" id="point0" value="0"><label for="point0">०</label></span>
+          </div>
+    </th>
+      <th>
+          <div class="points">
+            <span><input type="radio" name="amount_offered" id="point10" value="10"><label for="point10">१०</label></span>
+            <span><input type="radio" name="amount_offered" id="point9" value="9"><label for="point9">९</label></span>
+            <span><input type="radio" name="amount_offered" id="point8" value="8"><label for="point8">८</label></span>
+            <span><input type="radio" name="amount_offered" id="point7" value="7"><label for="point7">७</label></span>
+            <span><input type="radio" name="amount_offered" id="point6" value="6"><label for="point6">६</label></span>
+            <span><input type="radio" name="amount_offered" id="point5" value="5"><label for="point5">५</label></span>
+            <span><input type="radio" name="amount_offered" id="point4" value="4"><label for="point4">४</label></span>
+            <span><input type="radio" name="amount_offered" id="point3" value="3"><label for="point3">३</label></span>
+            <span><input type="radio" name="amount_offered" id="point2" value="2"><label for="point2">२</label></span>
+            <span><input type="radio" name="amount_offered" id="point1" value="1"><label for="point1">१</label></span>
+        </div>
+      </th>
+</tr>
+              </table>
+      </div>
+
+
+      <div class="grid-item-keep">
+          <img src ="{% static "keep.png" %}" width="140">
+      </div>
+      <div class="grid-item-keep">
+          <br>
+          <table>
+              <tr>
+                <th>
+          <div class="nopointskeep">
+             <span id="point10keep"><label>०</label></span>
+          </div>
+                </th>
+                  <th>
+          <div class="pointskeep">
+            <span id="point0keep"><label>१०</label></span>
+            <span id="point1keep"><label>९</label></span>
+            <span id="point2keep"><label>८</label></span>
+            <span id="point3keep"><label>७</label></span>
+            <span id="point4keep"><label>६</label></span>
+            <span id="point5keep"><label>५</label></span>
+            <span id="point6keep"><label>४</label></span>
+            <span id="point7keep"><label>३</label></span>
+            <span id="point8keep"><label>२</label></span>
+            <span id="point9keep"><label>१</label></span>
+        </div>
+              </th>
+              </tr>
+          </table>
+      </div>
+    </div>
+
+
+    <style>
+        .circle {
+          height: 50px;
+          width: 50px;
+          background-color: #555;
+          border-radius: 50%;
+        }
+        #audioInstructions {
+            margin: auto;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .grid-container {
+          display: grid;
+          grid-template-columns: auto auto;
+          background-color: goldenrod;
+          padding: 10px;
+
+        }
+        .grid-item {
+          background-color: white;
+          border: 1px solid rgba(0, 0, 0, 0.8);
+          padding: 10px;
+          font-size: 30px;
+          text-align: center;
+
+        }
+        .grid-item-keep {
+          background-color: lightyellow;
+          border: 1px solid black;
+          padding: 10px;
+          font-size: 30px;
+          text-align: center;
+        }
+        .points {
+            display:inline-block;
+            float:left;
+            width:644px;
+        }
+        .points span { float:right; position:relative; }
+        .points span input {
+            position:absolute;
+            top:0px;
+            left:0px;
+            opacity:0;
+        }
+        .points span label {
+            display:inline-block;
+            width:60px;
+            height:60px;
+            text-align:center;
+            color:black;
+            background:#ccc;
+            font-size:50px;
+            margin-right:4px;
+            line-height:60px;
+            border-radius:50%;
+            -webkit-border-radius:50%;
+        }
+        .points span:hover ~ span label,
+        .points span:hover label,
+        .points span.checked label,
+        .points span.checked ~ span label {
+            background:#F90;
+            color:#FFF;
+        }
+        .nopoints {
+            display:inline-block;
+            float:left;
+            width:57px;
+        }
+        .nopoints span { float:left; position:relative; }
+        .nopoints span input {
+            position:absolute;
+            top:0px;
+            left:0px;
+            opacity:0;
+        }
+        .nopoints span label {
+            display:inline-block;
+            width:60px;
+            height:60px;
+            text-align:center;
+            color:black;
+            background:#ccc;
+            font-size:50px;
+            margin-right:4px;
+            line-height:60px;
+            border-radius:50%;
+            -webkit-border-radius:50%;
+        }
+        .nopoints span:hover ~ span label,
+        .nopoints span:hover label,
+        .nopoints span.checked label,
+        .nopoints span.checked ~ span label {
+            background:black;
+            color:white;
+            color:#FFF;
+        }
+
+        .pointskeep {
+            float:left;
+            width:644px;
+        }
+        .pointskeep span { float:right; position:relative; }
+        .pointskeep span input {
+            position:absolute;
+            top:0px;
+            left:0px;
+            opacity:0;
+        }
+        .pointskeep span label {
+            color:black;
+            background:#ccc;
+            display:inline-block;
+            width:60px;
+            height:60px;
+            text-align:center;
+            font-size:50px;
+            margin-right:4px;
+            line-height:60px;
+            border-radius:50%;
+            -webkit-border-radius:50%;
+        }
+
+        .pointskeep span.checked label,
+        .pointskeep span.checked ~ span label {
+            background:#F90;
+            color:#FFF;
+        }
+
+        .nopointskeep {
+            float:left;
+            width:57px;
+        }
+        .nopointskeep span { float:left; position:relative; }
+        .nopointskeep span input {
+            position:absolute;
+            top:0px;
+            left:0px;
+            opacity:0;
+        }
+        .nopointskeep span label {
+            display:inline-block;
+            width:60px;
+            height:60px;
+            text-align:center;
+            color:black;
+            background:#ccc;
+            font-size:50px;
+            margin-right:4px;
+            line-height:60px;
+            border-radius:50%;
+            -webkit-border-radius:50%;
+        }
+
+        .nopointskeep span.checked label,
+        .nopointskeep span.checked ~ span label {
+            background:black;
+            color:white;
+            color:#FFF;
+        }
+
+        #next {
+            background-color: Transparent;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;
+        }
+        #next:active {
+          background-color: #3e8e41;
+          box-shadow: 0 5px #666;
+          transform: translateY(4px);
+        }
+
+    </style>
+
+    <script>
+        $(document).ready(function(){
+
+            // This bit of code forces the participant to listen to
+            // the full instructions before being able to click anything.
+            // Just change the time at the end of the function based on
+            // length of instructions.
+            $('input').attr('disabled',true);
+            setTimeout(function() {
+                $('input').attr('disabled',false); }, 34000);
+
+            document.getElementById('next').disabled = true;
+            setTimeout(function(){
+                  document.getElementById('next').disabled = false;}, 34000);
+
+           // Check Radio-box
+              $(".points input:radio").attr("checked", false);
+
+              $('.points input').click(function() {
+
+                $(".points span").removeClass('checked');
+                $(".pointskeep span").removeClass('checked');
+                $(".nopointskeep span").removeClass('checked');
+                $(".nopoints span").removeClass('checked');
+
+                $(this).parent().addClass('checked');
+                $("#"+this.id+"keep").addClass('checked');
+
+              });
+
+              $('.nopoints input').click(function() {
+
+                $(".points span").removeClass('checked');
+                $(".pointskeep span").removeClass('checked');
+                $(".nopointskeep span").removeClass('checked');
+                $(".nopoints span").removeClass('checked');
+
+                $(this).parent().addClass('checked');
+                $("#"+this.id+"keep").addClass('checked');
+
+              });
+
+              var audioFile = new Audio();
+              // // This is the part that allows you to add instructions/audio files to each
+              // // button for the offer
+              $('#point0').change(function() {
+                stopAllAudio();
+                audioFile.src = "{% static "Offer_point0.mp3" %}";
+                audioFile.play();
+              });
+              $('#point1').change(function() {
+                stopAllAudio();
+                audioFile.src = "{% static "Offer_point1.mp3" %}";
+                audioFile.play();
+
+              });
+              $('#point2').change(function() {
+                stopAllAudio();
+                audioFile.src = "{% static "Offer_point2.mp3" %}";
+                audioFile.play();
+
+              });
+              $('#point3').change(function() {
+                stopAllAudio();
+                audioFile.src = "{% static "Offer_point3.mp3" %}";
+                audioFile.play();
+
+              });
+              $('#point4').change(function() {
+                stopAllAudio();
+                audioFile.src = "{% static "Offer_point4.mp3" %}";
+                audioFile.play();
+
+              });
+              $('#point5').change(function() {
+                stopAllAudio();
+                audioFile.src = "{% static "Offer_point5.mp3" %}";
+                audioFile.play();
+
+              });
+              $('#point6').change(function() {
+                stopAllAudio();
+                audioFile.src = "{% static "Offer_point6.mp3" %}";
+                audioFile.play();
+
+              });
+              $('#point7').change(function() {
+                stopAllAudio();
+                audioFile.src = "{% static "Offer_point7.mp3" %}";
+                audioFile.play();
+
+              });
+              $('#point8').change(function() {
+                stopAllAudio();
+                audioFile.src = "{% static "Offer_point8.mp3" %}";
+                audioFile.play();
+
+              });
+              $('#point9').change(function() {
+                stopAllAudio();
+                audioFile.src = "{% static "Offer_point9.mp3" %}";
+                audioFile.play();
+
+              });
+              $('#point10').change(function() {
+                stopAllAudio();
+                audioFile.src = "{% static "Offer_point10.mp3" %}";
+                audioFile.play();
+              });
+
+        });
+
+        function stopAllAudio(){
+            var allAudios = document.querySelectorAll('audio');
+            allAudios.forEach(function(audio){
+                audio.pause();
+                audio.currentTime = 0;
+            });
+        }
+
+        // This bit cues the audio instructions to play automatically
+        setTimeout(function(){
+              document.getElementById('audioInstructions').play(); }, 5000);
+
+    </script>
+<br>
+<p align="right">
+    <button id="next" class="otree-btn-next btn btn-primary">
+        <img src ="{% static "NextButton.png" %}" width="140">
+    </button>
+</p>
+
+{% endblock %}
