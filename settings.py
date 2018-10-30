@@ -29,7 +29,7 @@ SESSION_CONFIGS = [
 LANGUAGE_CODE = 'en'
 
 # e.g. EUR, GBP, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'USD'
+REAL_WORLD_CURRENCY_CODE = 'INR'
 USE_POINTS = True
 
 ROOMS = []
@@ -44,6 +44,8 @@ ROOMS = []
 # - If you would like to put your site online in public demo mode where
 #   anybody can play a demo version of your game, but not access the rest
 #   of the admin interface, set it to DEMO.
+
+SENTRY_DSN = environ.get('SENTRY_DSN')
 
 # for flexibility, you can set it in the environment variable OTREE_AUTH_LEVEL
 AUTH_LEVEL = environ.get('OTREE_AUTH_LEVEL')
