@@ -1,0 +1,98 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+<h1> परिक्षण खेल ख़तम हुआ </h1>
+
+        {% if player.id_in_group == 1 %}
+        <p>
+        <audio controls id="audioInstructions">
+              <source src="{% static "Begin_Page_Proposer.mp3" %}" type="audio/mp3">
+        </audio>
+        </p>
+        {% else %}
+        <p>
+        <audio controls id="audioInstructions">
+              <source src="{% static "Begin_Page_Responder.mp3" %}" type="audio/mp3">
+        </audio>
+        </p>
+        {% endif %}
+<br>
+<h2> <p align="center"> आपको खेल में यह पहचान मिला हैं : </p>
+
+    <p align = "center">{% if player.id_in_group == 1 %} <span class="role">प्रस्तावक</span>
+        {% else %} <span class="role">चयनकर्ता</span>{% endif %}</p>
+
+</h2>
+<br>
+
+{% endblock %}
+{% block content %}
+
+<style>
+    #audioInstructions {
+            margin: auto;
+            width: 100%;
+            padding: 10px;
+    }
+
+    .role {
+        font-size: 200%;
+        text-align: center;
+        padding: 4px;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+        border-style: solid;
+    }
+h1 {
+    color: black;
+    font-size: 200%;
+	padding-left: 0px;
+	position: absolute;
+	top:20px;}
+
+h2 {
+	color: black;
+    font-size: 150%;
+	padding-left: 0px;}
+
+        #next {
+            background-color: Transparent;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;
+        }
+        #next:active {
+          background-color: #3e8e41;
+          box-shadow: 0 5px #666;
+          transform: translateY(4px);
+        }
+
+</style>
+
+<script>
+        $(document).ready(function(){
+            // This bit cues the audio instructions to play automatically
+            setTimeout(function(){
+                  document.getElementById('audioInstructions').play(); }, 3000);
+
+            {#// This bit of code forces the participant to listen to#}
+            {#// the full instructions before being able to click anything.#}
+            {#// Just change the time at the end of the function based on#}
+            {#// length of instructions.#}
+            {#document.getElementById('next').disabled = true;#}
+            {#setTimeout(function(){#}
+            {#      document.getElementById('next').disabled = false;}, 12000);#}
+        });
+</script>
+
+<p align="right">
+    <button id="next" class="otree-btn-next btn btn-primary">
+        <img src ="{% static "NextButton.png" %}" width="140">
+    </button>
+</p>
+
+{% endblock %}
+

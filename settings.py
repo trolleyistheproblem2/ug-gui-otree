@@ -20,6 +20,20 @@ SESSION_CONFIGS = [
         'app_sequence': ['ug_gui'],
         'use_strategy_method': False,
     },
+{
+        'name': 'ug_text',
+        'display_name': "Ultimatum Text",
+        'num_demo_participants': 2,
+        'app_sequence': ['ug_text'],
+        'use_strategy_method': False,
+    },
+{
+        'name': 'ug_gui_no_wait',
+        'display_name': "Ultimatum GUI no wait",
+        'num_demo_participants': 2,
+        'app_sequence': ['ug_gui_no_wait'],
+        'use_strategy_method': False,
+    },
 
 ]
 
