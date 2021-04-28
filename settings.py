@@ -34,6 +34,13 @@ SESSION_CONFIGS = [
         'app_sequence': ['ug_gui_no_wait'],
         'use_strategy_method': False,
     },
+{
+        'name': 'ug_gui_nyuad',
+        'display_name': "Ultimatum GUI NYUAD",
+        'num_demo_participants': 2,
+        'app_sequence': ['ug_gui_nyuad'],
+        'use_strategy_method': False,
+    },
 
 ]
 

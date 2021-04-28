@@ -1,0 +1,465 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    परिणाम
+{% endblock %}
+
+
+{% block content %}
+
+    {% if player.id_in_group == 1 %}
+        {% if group.offer_accepted %}
+               {% if group.amount_offered == 0 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Accept0.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 1 %}
+                    <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Accept1.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 2 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Accept2.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 3 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Accept3.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 4 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Accept4.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 5 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Accept5.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 6 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Accept6.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 7 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Accept7.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 8 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Accept8.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 9 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Accept9.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 10 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Accept_10.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+            {% else %}
+                 {% if group.amount_offered == 0 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Reject0.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 1 %}
+                    <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Reject1.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 2 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Reject2.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 3 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Reject3.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 4 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Reject4.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 5 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Reject5.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 6 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Reject6.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 7 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Reject7.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 8 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Reject8.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 9 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Reject9.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 10 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Proposer_Reject10.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+        {% endif %}
+    {% endif %}
+    {% if player.id_in_group == 2 %}
+        {% if group.offer_accepted %}
+               {% if group.amount_offered == 0 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Accept0.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 1 %}
+                    <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Accept1.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 2 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Accept2.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 3 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Accept3.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 4 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Accept4.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 5 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Accept5.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 6 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Accept6.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 7 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Accept7.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 8 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Accept8.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 9 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Accept9.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 10 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Accept_10.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+            {% else %}
+                 {% if group.amount_offered == 0 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Reject0.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 1 %}
+                    <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Reject1.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 2 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Reject2.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 3 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Reject3.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 4 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Reject4.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 5 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Reject5.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 6 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Reject6.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 7 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Reject7.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 8 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Reject8.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 9 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Reject9.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+                {% if group.amount_offered == 10 %}
+                     <p>
+                        <audio controls id="audioInstructions">
+                              <source src="{% static "Result_Responder_Reject10.mp3" %}" type="audio/mp3">
+                        </audio>
+                    </p>
+                {% endif %}
+        {% endif %}
+    {% endif %}
+
+    <p>
+
+         <h1 align=center>
+    {% if player.payoff == 0 %}
+        <br>
+        <strong>आपको ० अंक मिले हैं.</strong>
+         <br>
+        <br>
+         <img src="{% static "zero.png" %}" width="700"/>
+    {% endif %}
+    {% if player.payoff == 1 %}
+        <br>
+        <strong>आपको १ अंक मिले हैं. </strong>
+        <br>
+        <br>
+         <img src="{% static "one.png" %}" width="700"/>
+    {% endif %}
+    {% if player.payoff == 2 %}
+        <br>
+        <strong> आपको २ अंक मिले हैं. </strong>
+         <br>
+        <br>
+         <img src="{% static "two.png" %}" width="700"/>
+    {% endif %}
+    {% if player.payoff == 3 %}
+        <br>
+         <strong>आपको ३ अंक मिले हैं. </strong>
+         <br>
+        <br>
+         <img src="{% static "three.png" %}" width="700"/>
+    {% endif %}
+    {% if player.payoff == 4 %}
+        <br>
+        <strong> आपको ४ अंक मिले हैं. </strong>
+         <br>
+        <br>
+        <img src="{% static "four.png" %}" width="700"/>
+    {% endif %}
+    {% if player.payoff == 5 %}
+        <br>
+        <strong> आपको ५ अंक मिले हैं. </strong>
+         <br>
+        <br>
+        <img src="{% static "five.png" %}" width="700"/>
+    {% endif %}
+    {% if player.payoff == 6 %}
+        <br>
+        <strong> आपको ६ अंक मिले हैं. </strong>
+         <br>
+        <br>
+        <img src="{% static "six.png" %}" width="700"/>
+    {% endif %}
+    {% if player.payoff == 7 %}
+        <br>
+        <strong> आपको ७ अंक मिले हैं. </strong>
+         <br>
+        <br>
+         <img src="{% static "seven.png" %}" width="700"/>
+    {% endif %}
+    {% if player.payoff == 8 %}
+        <br>
+        <strong>आपको ८ अंक मिले हैं. </strong>
+         <br>
+        <br>
+         <img src="{% static "eight.png" %}" width="700"/>
+    {% endif %}
+    {% if player.payoff == 9 %}
+        <br>
+        <strong>आपको ९ अंक मिले हैं.</strong>
+         <br>
+        <br>
+         <img src="{% static "nine.png" %}" width="700"/>
+    {% endif %}
+    {% if player.payoff == 10 %}
+        <br>
+        <strong>आपको १० अंक मिले हैं. </strong>
+         <br>
+        <br>
+         <img src="{% static "ten.png" %}" width="700"/>
+    {% endif %}
+</h1>
+
+    </p>
+
+<style>
+
+    h1 {
+        font-size: 200%;
+        text-align: center;
+        padding: 4px;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+        border-style: solid;
+    }
+     #audioInstructions {
+            margin: auto;
+            width: 100%;
+            padding: 10px;
+        }
+        #next {
+            background-color: Transparent;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;
+        }
+        #next:active {
+          background-color: #3e8e41;
+          box-shadow: 0 5px #666;
+          transform: translateY(4px);
+        }
+</style>
+
+<script>
+        $(document).ready(function(){
+            // This bit cues the audio instructions to play automatically
+            setTimeout(function(){
+                  document.getElementById('audioInstructions').play(); }, 3000);
+
+            // This bit of code forces the participant to listen to
+            // the full instructions before being able to click anything.
+            // Just change the time at the end of the function based on
+            // length of instructions.
+            {#document.getElementById('next').disabled = true;#}
+            {#setTimeout(function(){#}
+            {#      document.getElementById('next').disabled = false;}, 12000);#}
+        });
+</script>
+
+<p align="right">
+    <button id="next" class="otree-btn-next btn btn-primary">
+        <img src ="{% static "NextButton.png" %}" width="140">
+    </button>
+</p>
+
+{% endblock %}
